@@ -1,1 +1,44 @@
+# Python cache and logs
+__pycache__/
+*.pyc
+*.pyo
+*.log
+
+# Virtual environments
 venv/
+.venv/
+env/
+ENV/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Mac OS & system-specific files
+.DS_Store
+Thumbs.db
+
+# VSCode workspace settings (optional, if collaborating)
+.vscode/
+
+# Project outputs (optional if not tracked)
+*.zip
+*.tar.gz
+*.rar
+*.gz
+
+# Model checkpoints (if added later)
+*.h5
+*.ckpt
+*.pth
+*.pt
+
+# Report builds (optional)
+*.pdf
+
+# IPFS or node_modules if used in future Web3 project extensions
+node_modules/
+.ipfs/
+
+# Datasets (optional - comment out if you track data in Git)
+# data/*.txt
+# data/*.csv
