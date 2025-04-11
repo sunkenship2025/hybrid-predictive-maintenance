@@ -26,8 +26,6 @@ Each phase is modular, separated into its own notebook, datasets, and outputs:
 | `/report` | JSON summaries (silhouette scores, sensor rankings), and per-cluster sensor summaries |
 | `/scripts` | (Optional) Script versions of notebooks for automated runs |
 
-##  Project Tree
-
 ## 📅 Timeline
 Final submission deadline: **May 5**
 
