@@ -1,88 +1,92 @@
 # Hybrid Predictive Maintenance using Enhanced CMAPSS Dataset
 
-This project implements a hybrid system that predicts both engine degradation stages and remaining useful life (RUL) using machine learning on the NASA CMAPSS datasets.
+This project builds a hybrid system to predict both engine degradation stages and Remaining Useful Life (RUL) using machine learning models on the NASA CMAPSS datasets.
 
 ---
 
-## Folder Structure
+## Project Structure
 
 | Folder         | Description |
 |----------------|-------------|
-| `data/`        | Contains raw CMAPSS datasets, cleaned sensor data, and clustered outputs for FD001–FD004 |
-| `figures/`     | All visualizations including PCA, t-SNE, cluster distributions, top sensor profiles, time profiles, dendrograms, and elbow curves |
-| `report/`      | Markdown summaries, JSON evaluation metrics, top variance sensors, and stage-wise cluster statistics |
-| `notebooks/`   | Phase-wise Jupyter Notebooks containing the main code and logic |
-| `scripts/`     | Reproducible `.py` scripts exported from notebooks for automation and CLI execution |
-| `docs/`        | (Optional) To be used for compiling the final report or paper using Typst or LaTeX |
+| `data/`        | Raw CMAPSS files, cleaned sensor data, and clustered datasets for FD001–FD004 |
+| `figures/`     | Visualizations from Phase 1 and 2: PCA, t-SNE, cluster distributions, top sensor plots, heatmaps, dendrograms, elbow curves |
+| `report/`      | Evaluation metrics, summaries (markdown and JSON), sensor variance rankings, cluster summaries |
+| `notebooks/`   | Phase-wise Jupyter notebooks containing implementation and explanations |
+| `scripts/`     | Python scripts exported from notebooks for reproducibility |
+| `docs/`        | (Optional) Space to compile the final technical report using Typst or LaTeX |
 
 ---
 
 ## Project Phases
 
 ### Phase 1: Data Cleaning and Normalization
-- Loaded all FD001–FD004 datasets from CMAPSS
-- Dropped constant features based on zero variance
-- Normalized all sensor readings using MinMaxScaler
-- Saved cleaned datasets for reuse
+- Loaded CMAPSS raw datasets (FD001 to FD004)
+- Assigned proper column names
+- Dropped constant sensors (zero variance)
+- Applied MinMaxScaler normalization to all sensor features
+- Saved cleaned datasets for further use
+- Generated **correlation heatmaps** to compare sensor relationships before and after normalization
 
-### Phase 2: Clustering and Stage Labeling
-- Applied KMeans and Agglomerative clustering (5 stages each)
-- Used silhouette scores and WCSS (elbow method) to validate clustering quality
-- Visualized clusters using PCA and t-SNE projections
-- Created degradation stage labels and exported results
-- Identified top high-variance sensors per dataset for later modeling
-- Summarized average sensor values per cluster stage
-- Generated stage-wise time profiles for RUL interpretation
-- Exported evaluation metrics to Markdown (`silhouette_summary.md`, `elbow_summary.md`)
-- Included dendrograms for hierarchical cluster interpretation
+### Phase 2: Clustering and Degradation Stage Labeling
+- Performed unsupervised clustering using KMeans and Agglomerative Clustering (5 stages each)
+- Validated clustering quality using **silhouette scores** and **elbow curves**
+- Applied PCA and t-SNE to visualize sensor behavior in 2D
+- Assigned cluster labels (`Stage 0` to `Stage 4`) for both methods
+- Plotted:
+  - Cluster projections (PCA/t-SNE)
+  - Cluster distributions
+  - Stage-wise average cycle (time)
+  - High-variance sensor behavior per stage
+  - Dendrograms (Agglomerative)
+- Exported clustered datasets and summaries
 
-### Phase 3: Classification (Upcoming)
-- Train classifiers to predict degradation stage using top sensor features
+### Phase 3 (Upcoming): Classification
+- Will train supervised models to classify the degradation stage of each engine cycle using selected sensor features
 
 ---
 
-## Quick Access to Important Files
+## Key Files and Quick Access
 
-### Data and Processed Files (`/data`)
-- `train_FD00x.txt`, `test_FD00x.txt`, `RUL_FD00x.txt` — original CMAPSS files
-- `clean_train_FD00x.csv` — cleaned and normalized datasets
-- `clustered_train_FD00x.csv` — labeled with KMeans and Agglomerative stages
+### Data (`/data`)
+- `train_FD00x.txt`, `test_FD00x.txt`, `RUL_FD00x.txt` — Original CMAPSS data
+- `clean_train_FD00x.csv` — Normalized datasets after preprocessing
+- `clustered_train_FD00x.csv` — Labeled with cluster IDs and stage names
 
 ### Notebooks (`/notebooks`)
-- `01_data_cleaning.ipynb` — Phase 1 implementation
-- `02_clustering.ipynb` — Phase 2 implementation with visualizations
+- `01_data_cleaning.ipynb` — Phase 1: Preprocessing, normalization, heatmaps
+- `02_clustering.ipynb` — Phase 2: Clustering, visualization, evaluation
 
-### Visualizations (`/figures`)
-- Cluster projections (`*_PCA_Clusters.png`, `*_TSNE_Clusters.png`)
-- Cluster distribution plots (`*_Cluster_Distribution.png`)
-- Sensor degradation behavior (`*_TopSensors_PerStage.png`)
-- Time progression by stage (`*_Stage_TimeProfile.png`)
-- Elbow and dendrogram plots for cluster validation
+### Visuals (`/figures`)
+- PCA / t-SNE cluster projections
+- Cluster distribution and stage-time trends
+- Top sensor plots
+- Elbow curves and dendrograms
+- **New:** Correlation heatmaps (before vs. after normalization)
 
-### Reports and Evaluation Files (`/report`)
-- `silhouette_scores.json`, `silhouette_summary.md`
-- `elbow_scores.json`, `elbow_summary.md`
-- `top_variance_sensors.json`
-- `cluster_summaries/` — average sensor values by stage per FD dataset
+### Reports and Insights (`/report`)
+- `silhouette_scores.json`, `silhouette_summary.md` — Clustering evaluation
+- `elbow_scores.json`, `elbow_summary.md` — WCSS summary for KMeans
+- `top_variance_sensors.json` — Top informative sensors
+- `cluster_summaries/` — Mean sensor values per cluster stage
 
 ### Scripts (`/scripts`)
-- `data_cleaning.py`
-- `clustering_analysis.py`
+- `data_cleaning.py` — Reusable version of Phase 1 pipeline
+- `clustering_analysis.py` — Phase 2 clustering and visual generation
 
 ---
 
 ## Contributors
 
-Team member names are listed in `/report/contributors.txt`.
+See `/report/contributors.txt` for team member names.
 
 ---
 
 ## Final Report
 
-The final report will be compiled after Phase 5 using Typst.
+A consolidated project report will be compiled at the end of Phase 5 using Typst or LaTeX.
 
 ---
 
-## Timeline
+## Deadline
 
-Final submission deadline: May 5
+Final submission due: **May 5**
