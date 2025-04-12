@@ -1,30 +1,48 @@
-# 🛠️ Hybrid Predictive Maintenance — Full Project Repository
+# 🔧 Hybrid Predictive Maintenance using Enhanced CMAPSS Dataset
 
-This repository contains an end-to-end unsupervised + supervised predictive maintenance pipeline using the **NASA CMAPSS dataset (FD001–FD004)**. It includes data cleaning, degradation stage clustering, and the foundation for RUL prediction and risk scoring.
-
----
-
-## 🔄 Project Flow
-
-Each phase is modular, separated into its own notebook, datasets, and outputs:
-
-1. **Phase 1: Data Cleaning & Preprocessing**
-2. **Phase 2: Unsupervised Clustering (KMeans & Agglomerative)**
-3. **Phase 3: Health State Classification (Planned)**
-4. **Phase 4: Remaining Useful Life (RUL) Regression (Planned)**
-5. **Phase 5: Hybrid Risk Scoring Model (Planned)**
+This project builds a hybrid system that predicts both **engine degradation stages** and **remaining useful life (RUL)** using machine learning on the NASA CMAPSS datasets.
 
 ---
 
-## 📁 Folder Summary
+## 📁 Folder Structure
 
-| Folder | Description |
-|--------|-------------|
-| `/data` | Raw `.txt` files, cleaned `.csv` datasets, and clustering-labeled versions |
-| `/figures` | All visual plots generated across PCA, t-SNE, clustering, time profiles, and elbow analysis |
-| `/notebooks` | Phase-wise notebooks with complete logic, visualization, and exports |
-| `/report` | JSON summaries (silhouette scores, sensor rankings), and per-cluster sensor summaries |
-| `/scripts` | (Optional) Script versions of notebooks for automated runs |
+| Folder         | Purpose |
+|----------------|---------|
+| `data/`        | Contains raw, cleaned, and clustered CSVs for FD001–FD004 |
+| `figures/`     | PCA, t-SNE, distribution plots, and degradation profiles |
+| `report/`      | JSON files, silhouette scores, contributors.txt, and final outputs |
+| `notebooks/`   | Phase-wise notebooks with all code and markdown |
+| `docs/`        | *(Optional)* Use this to build your final paper/report |
+
+---
+
+## 🚦 Project Phases
+
+### ✅ Phase 1: Data Cleaning & Normalization
+- Removed constant features
+- Scaled sensor data using MinMaxScaler
+- Saved cleaned data for reuse
+
+### ✅ Phase 2: Clustering + Stage Labeling
+- Applied KMeans and Agglomerative clustering (5 stages)
+- Visualized clusters using PCA and t-SNE
+- Calculated silhouette scores and exported insights
+
+### 🔜 Phase 3: Classification (Next)
+- Predict degradation stage using supervised models
+
+---
+
+## 👨‍💻 Team Contributors
+
+Names are listed in `/report/contributors.txt`.
+
+---
+
+## 📄 Final Report
+> Will be compiled and submitted after Phase 5 using Typst.
+
+---
 
 ## 📅 Timeline
 Final submission deadline: **May 5**
