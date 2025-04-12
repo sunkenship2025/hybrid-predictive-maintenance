@@ -70,6 +70,16 @@ This folder contains **all visual plots** generated during **Phase 2** of the Hy
 
 ---
 
+### 7. 🧪 `*_TopSensors_PerStage.png`
+- **What it shows:** Line plot of the **top 3 high-variance sensors** per dataset, averaged over each KMeans stage.
+- **Why it's useful:** Shows which sensitive sensors vary across degradation stages and are most relevant for modeling.
+- **Used in:** Feature selection for Phase 3 and sensor-based diagnostics.
+
+➡️ Example:  
+`FD001_TopSensors_PerStage.png`
+
+---
+
 ## 🗂️ File Naming Convention
 
 Each file is named as:
@@ -83,6 +93,7 @@ Each file is named as:
 | `Stage_TimeProfile` | Avg time per stage |
 | `ElbowCurve` | Elbow method for KMeans |
 | `Dendrogram` | Hierarchical tree from Agglo |
+| `TopSensors_PerStage` | Top 3 sensors plotted across stages |
 
 ---
 
@@ -91,4 +102,3 @@ Each file is named as:
 - ✅ These plots are ready to be embedded in your report or presentation.
 - 📊 They support clustering validity, visual storytelling, and degradation interpretation.
 - 🏆 High visual quality = high score in competitions and reviews.
-

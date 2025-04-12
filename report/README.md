@@ -16,6 +16,14 @@ This folder consolidates **key clustering evaluation results**, **feature insigh
 
 ---
 
+### 🔗 Quick Links
+
+- 📊 [Silhouette Score Summary](./silhouette_summary.md)
+- 📈 [Top Variance Sensors JSON](./top_variance_sensors.json)
+- 📂 [Cluster Summaries (CSV)](./cluster_summaries/)
+
+---
+
 ## 🔍 Why This Folder Matters
 
 - Helps evaluate **clustering quality** with reproducible metrics  
