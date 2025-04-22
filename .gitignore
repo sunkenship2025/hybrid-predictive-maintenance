@@ -42,3 +42,6 @@ node_modules/
 # Datasets (optional - comment out if you track data in Git)
 # data/*.txt
 # data/*.csv
+
+
+.env
