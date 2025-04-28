@@ -1,6 +1,6 @@
 # /report — Evaluation Metrics and Clustering Insights
 
-This folder consolidates all evaluation results and feature-based insights generated in Phase 1 and Phase 2 of the project. These resources serve as supporting material for later stages, including supervised classification (Phase 3), RUL regression (Phase 4), and hybrid risk modeling (Phase 5).
+This folder consolidates all evaluation results and feature-based insights generated in Phase 1, Phase 2, and Phase 2.5 of the project. These resources serve as supporting material for later stages, including supervised classification (Phase 3), RUL regression (Phase 4), and hybrid risk modeling (Phase 5).
 
 ---
 
@@ -14,6 +14,7 @@ This folder consolidates all evaluation results and feature-based insights gener
 | [`elbow_scores.json`](./elbow_scores.json) | WCSS values for KMeans clustering with `k` ranging from 2 to 10. Used to generate elbow plots for selecting the best number of clusters. |
 | [`elbow_summary.md`](./elbow_summary.md) | Markdown summary of the elbow method results, including a full WCSS table and explanation of how the best `k` was chosen. |
 | [`cluster_summaries/`](./cluster_summaries/) | Contains per-dataset CSV files showing average sensor values and time per cluster stage (KMeans), which helps in interpreting the stages. |
+| [`manual_cluster_verification/`](./manual_cluster_verification/) | (Phase 2.5) Contains analysis results from manual cluster verification, coinciding stage detection, and stage relabeling applied to FD001–FD004 datasets. |
 | [`correlation_heatmaps/`](../figures/) | Heatmaps showing sensor correlation before and after normalization for each dataset. These were created to demonstrate the impact of scaling during Phase 1. |
 | [`contributors.txt`](./contributors.txt) | Optional file listing team contributors and their contact information. Include if submitting as a group. |
 
@@ -27,6 +28,7 @@ This folder makes it easy to track and reuse the evaluation metrics, summaries, 
 - **Variance rankings** guide sensor selection for classification models.
 - **Elbow scores** justify the use of five clusters.
 - **Cluster summaries** explain how sensor values evolve with degradation.
+- **Manual cluster verification** ensures cluster stages represent true degradation progression, improving classification and RUL modeling reliability.
 - **Correlation heatmaps** provide preprocessing transparency.
 - **Markdown summaries** make it easy to reuse results in the final paper or report.
 
@@ -35,8 +37,9 @@ This folder makes it easy to track and reuse the evaluation metrics, summaries, 
 ## Referenced In
 
 - Phase 2: Unsupervised clustering evaluation
+- Phase 2.5: Manual verification of clustering stages and stage correction
 - Phase 3: Sensor selection and stage label usage for classifiers
-- Phase 4: Mapping degradation stages to RUL modeling
+- Phase 4: Mapping corrected degradation stages to RUL modeling
 - Phase 5: Using insights from clustering to score hybrid risk
-- Final Report: All scores and plots from this folder will be cited and used as figures
+- Final Report: All scores, corrections, and plots from this folder will be cited and used as figures
 

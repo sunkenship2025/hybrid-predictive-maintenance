@@ -8,8 +8,8 @@ This project builds a hybrid system to predict both engine degradation stages an
 
 | Folder         | Description |
 |----------------|-------------|
-| `data/`        | Raw CMAPSS files, cleaned sensor data, and clustered datasets for FD001–FD004 |
-| `figures/`     | Visualizations from Phase 1 and 2: PCA, t-SNE, cluster distributions, top sensor plots, heatmaps, dendrograms, elbow curves |
+| `data/`        | Raw CMAPSS files, cleaned sensor data, clustered datasets, and manually corrected cluster stages for FD001–FD004 |
+| `figures/`     | Visualizations from Phase 1, Phase 2, and Phase 2.5: PCA, t-SNE, cluster distributions, top sensor plots, heatmaps, dendrograms, elbow curves |
 | `report/`      | Evaluation metrics, summaries (markdown and JSON), sensor variance rankings, cluster summaries |
 | `notebooks/`   | Phase-wise Jupyter notebooks containing implementation and explanations |
 | `scripts/`     | Python scripts exported from notebooks for reproducibility |
@@ -40,6 +40,14 @@ This project builds a hybrid system to predict both engine degradation stages an
   - Dendrograms (Agglomerative)
 - Exported clustered datasets and summaries
 
+### Phase 2.5: Manual Cluster Verification and Correction
+- After clustering, manually verified degradation stage progression
+- Plotted top variance sensors and reviewed sensor behavior across clusters
+- Detected coinciding stages using mean sensor comparisons
+- Applied manual relabeling wherever cluster stages overlapped or were misordered
+- Saved corrected datasets: `corrected_clustered_train_FD00x.csv`
+- Ensured high-quality health stage labels for better future model training
+
 ### Phase 3 (Upcoming): Classification
 - Will train supervised models to classify the degradation stage of each engine cycle using selected sensor features
 
@@ -50,18 +58,21 @@ This project builds a hybrid system to predict both engine degradation stages an
 ### Data (`/data`)
 - `train_FD00x.txt`, `test_FD00x.txt`, `RUL_FD00x.txt` — Original CMAPSS data
 - `clean_train_FD00x.csv` — Normalized datasets after preprocessing
-- `clustered_train_FD00x.csv` — Labeled with cluster IDs and stage names
+- `clustered_train_FD00x.csv` — Datasets after KMeans/Agglomerative clustering
+- `corrected_clustered_train_FD00x.csv` — Manually corrected and verified clustered datasets
 
 ### Notebooks (`/notebooks`)
 - `01_data_cleaning.ipynb` — Phase 1: Preprocessing, normalization, heatmaps
 - `02_clustering.ipynb` — Phase 2: Clustering, visualization, evaluation
+- `02.5_cluster_verification.ipynb` — Phase 2.5: Manual cluster stage verification and correction
 
 ### Visuals (`/figures`)
 - PCA / t-SNE cluster projections
 - Cluster distribution and stage-time trends
 - Top sensor plots
 - Elbow curves and dendrograms
-- **New:** Correlation heatmaps (before vs. after normalization)
+- Correlation heatmaps (before vs. after normalization)
+- Manual cluster verification plots (Phase 2.5)
 
 ### Reports and Insights (`/report`)
 - `silhouette_scores.json`, `silhouette_summary.md` — Clustering evaluation
@@ -72,6 +83,7 @@ This project builds a hybrid system to predict both engine degradation stages an
 ### Scripts (`/scripts`)
 - `data_cleaning.py` — Reusable version of Phase 1 pipeline
 - `clustering_analysis.py` — Phase 2 clustering and visual generation
+- `cluster_verification.py` — Phase 2.5 manual cluster verification and correction
 
 ---
 

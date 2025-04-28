@@ -1,6 +1,6 @@
 # /data — Dataset Repository
 
-This folder contains all versions of the datasets used in Phases 1 and 2 of the Hybrid Predictive Maintenance project. It includes the original NASA CMAPSS datasets and the transformed versions created through preprocessing and clustering.
+This folder contains all versions of the datasets used in Phases 1, 2, and 2.5 of the Hybrid Predictive Maintenance project. It includes the original NASA CMAPSS datasets, cleaned sensor data, clustered datasets, and manually verified corrected cluster datasets.
 
 ---
 
@@ -34,22 +34,43 @@ Used in:
 
 ## 3. Clustered Training Datasets (Phase 2 Output)
 
-These CSV files contain the results of KMeans and Agglomerative clustering. Each file includes cluster labels, degradation stage labels, and 2D projections for PCA and t-SNE.
+These CSV files contain the results of unsupervised clustering (KMeans and Agglomerative).  
+Each file includes:
+- Cluster IDs (`kmeans_cluster`, `agglo_cluster`)
+- Degradation stage labels (`kmeans_stage`, `agglo_stage`)
+- PCA and t-SNE projections (`pca_1`, `tsne_1`, etc.)
 
 | File | Description |
 |------|-------------|
-| `clustered_train_FD001.csv` – `clustered_train_FD004.csv` | Sensor data with added columns: `kmeans_stage`, `agglo_stage`, `pca_1`, `tsne_1`, etc. |
+| `clustered_train_FD001.csv` – `clustered_train_FD004.csv` | Sensor data with clustering and stage labels for each cycle |
 
 Used in:  
-- Visualization (`/figures`)  
-- Stage-wise summaries (`/report/cluster_summaries/`)  
-- Classification and RUL modeling in later phases
+- Visualizations (`/figures`)  
+- Stage summaries (`/report/cluster_summaries/`)  
+- As base for manual verification (Phase 2.5)
+
+---
+
+## 4. Corrected Clustered Datasets (Phase 2.5 Output)
+
+After manually verifying degradation patterns in Phase 2.5, some datasets were relabeled to fix wrong or overlapping stage assignments.  
+These corrected datasets reflect improved degradation ordering.
+
+| File | Description |
+|------|-------------|
+| `corrected_clustered_train_FD001.csv` – `corrected_clustered_train_FD004.csv` | Clustered sensor data after manual relabeling or confirmation |
+
+Used in:  
+- Phase 3 supervised classification  
+- Phase 4 RUL modeling  
+- Ensures more reliable stage labels for training and testing
 
 ---
 
 ## Notes on Preprocessing Visuals
 
-The impact of normalization is demonstrated visually in `/figures` as heatmaps showing **sensor correlation before and after scaling**. These are meant to explain how Phase 1 cleaning affects the structure and redundancy of features across datasets.
+The impact of normalization is demonstrated visually in `/figures` as heatmaps showing **sensor correlation before and after scaling**.  
+Similarly, manual cluster verification plots were generated in Phase 2.5 to justify the corrections made.
 
 ---
 
@@ -57,7 +78,9 @@ The impact of normalization is demonstrated visually in `/figures` as heatmaps s
 
 This folder acts as the central data hub:
 - Starts with raw CMAPSS files
-- Produces cleaned, normalized datasets for analysis
-- Adds cluster labels and projections for further modeling
+- Produces cleaned and normalized datasets
+- Adds unsupervised cluster labels
+- Further improves stage labeling via manual verification
 
-It supports reproducibility and serves as the input foundation for all subsequent phases of the project.
+These versions ensure data quality and reliability across all future phases of the Hybrid Predictive Maintenance pipeline.
+

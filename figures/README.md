@@ -1,6 +1,6 @@
 # /figures — Clustering and Sensor Behavior Visualizations
 
-This folder contains all visual outputs generated during Phase 1 and Phase 2 of the Hybrid Predictive Maintenance project. These plots provide visual evidence for how engines degrade over time, how clusters form in sensor space, and how preprocessing steps affect the data.
+This folder contains all visual outputs generated during Phase 1, Phase 2, and Phase 2.5 of the Hybrid Predictive Maintenance project. These plots provide visual evidence for how engines degrade over time, how clusters form in sensor space, and how preprocessing steps affect the data.
 
 ---
 
@@ -40,6 +40,11 @@ This folder contains all visual outputs generated during Phase 1 and Phase 2 of 
   - Right: After MinMax normalization
 - Helps visualize the impact of preprocessing on sensor relationships.
 
+### 9. Manual Cluster Verification Plots (`/manual_cluster_verification/FD00X/*.png`)
+- Individual sensor behavior plots grouped by cluster stage after initial clustering.
+- Used during Phase 2.5 to manually verify the correctness of unsupervised cluster stages.
+- Helped identify stage overlaps and guided manual relabeling when needed.
+
 ---
 
 ## File Naming Format
@@ -57,6 +62,7 @@ Each file is named like:
 | `Dendrogram`             | Agglomerative tree structure             |
 | `TopSensors_PerStage`    | Sensor trends for high-variance sensors  |
 | `Correlation_Before_After` | Correlation matrix (raw vs. cleaned)  |
+| `manual_cluster_verification/` | Per-sensor cluster behavior plots for manual inspection |
 
 ---
 
@@ -64,6 +70,8 @@ Each file is named like:
 
 These figures are used in:
 - Clustering validation (Phase 2)
+- Manual cluster stage verification and correction (Phase 2.5)
 - Sensor diagnostics and selection (for Phase 3 modeling)
 - Reporting and documentation
 - Demonstrating preprocessing impact and model justification
+

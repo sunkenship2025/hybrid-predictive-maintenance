@@ -37,3 +37,23 @@ Major tasks include:
   - `/data/clustered_train_FD00x.csv` (includes cluster and stage labels)
   - `/figures/` (PCA, t-SNE plots, elbow curves, dendrograms, and time profile visualizations)
   - `/report/` (summary files and evaluation metrics)
+
+---
+
+### 3. `02.5_cluster_verification.ipynb` — Phase 2.5: Manual Cluster Verification and Correction
+This notebook performs manual verification and correction of the clustering stages created in Phase 2.
+
+Key activities include:
+- Plotting the top 5 high-variance sensors for each FD00x dataset to visually inspect stage progression.
+- Detecting coinciding stages using sensor-wise mean comparison.
+- Applying manual relabeling wherever necessary to correct overlapping or misaligned cluster stages.
+- Saving corrected datasets as:
+  - `corrected_clustered_train_FD001.csv`
+  - `corrected_clustered_train_FD002.csv`
+  - `corrected_clustered_train_FD003.csv`
+  - `corrected_clustered_train_FD004.csv`
+
+This phase ensures that health stage labeling is accurate and meaningful for future supervised learning.
+
+---
+
