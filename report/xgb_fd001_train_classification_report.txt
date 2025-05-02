@@ -1,11 +1,11 @@
               precision    recall  f1-score   support
 
-     Stage 0       0.88      0.91      0.90      4162
-     Stage 1       0.94      0.94      0.94      4186
-     Stage 2       0.82      0.42      0.55       960
-     Stage 3       0.78      0.92      0.84      1593
-     Stage 4       0.90      0.91      0.91      5603
+     Stage 0       0.93      0.94      0.94      4162
+     Stage 1       0.98      0.97      0.97      4186
+     Stage 2       0.94      0.77      0.85       960
+     Stage 3       0.91      0.96      0.94      1593
+     Stage 4       0.94      0.95      0.95      5603
 
-    accuracy                           0.89     16504
-   macro avg       0.86      0.82      0.83     16504
-weighted avg       0.89      0.89      0.89     16504
+    accuracy                           0.94     16504
+   macro avg       0.94      0.92      0.93     16504
+weighted avg       0.95      0.94      0.94     16504
