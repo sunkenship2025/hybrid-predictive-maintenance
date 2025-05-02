@@ -1,0 +1,5 @@
+Model,Train Accuracy,Test Accuracy,Mean F1 Macro Score (CV)
+Random Forest (Tuned),0.9993,0.8534,0.8086
+SVM,0.8288,0.8238,0.7508
+Logistic Regression,0.821,0.819,0.7499
+XGBoost,0.8897,0.8294,0.7428
