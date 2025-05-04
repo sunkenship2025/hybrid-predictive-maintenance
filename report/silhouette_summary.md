@@ -1,18 +1,8 @@
-# 📊 Silhouette Score Summary
+## Silhouette Score Summary (KMeans vs Agglomerative)
 
-## FD001
-- **KMeans**: 0.188
-- **Agglomerative**: 0.176
-
-## FD002
-- **KMeans**: 0.884
-- **Agglomerative**: 0.884
-
-## FD003
-- **KMeans**: 0.2454
-- **Agglomerative**: 0.225
-
-## FD004
-- **KMeans**: 0.8862
-- **Agglomerative**: 0.8862
-
+| Dataset | KMeans Score | Agglomerative Score |
+|---------|--------------|---------------------|
+| FD001 | 0.1880 | 0.1760 |
+| FD002 | 0.8840 | 0.8840 |
+| FD003 | 0.2454 | 0.2250 |
+| FD004 | 0.8862 | 0.8862 |
