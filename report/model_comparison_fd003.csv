@@ -1,0 +1,5 @@
+Model,CV Mean F1 Score,Test Accuracy,Test Weighted F1
+Random Forest,0.9269,0.94,0.94
+SVM,0.9263,0.94,0.94
+Logistic Regression,0.9178,0.94,0.94
+XGBoost,0.9263,0.94,0.94
