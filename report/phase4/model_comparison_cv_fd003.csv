@@ -1,0 +1,5 @@
+Model,CV RMSE,RMSE ± Std,CV MAE,MAE ± Std,CV R² Score,R² ± Std
+Random Forest (Tuned),34.96,± 1.23,20.96,± 0.60,0.6385,± 0.0109
+XGBoost Regressor,36.39,± 9.86,22.04,± 4.80,0.4923,± 0.1642
+Support Vector Regressor,37.38,± 11.48,21.14,± 5.57,0.484,± 0.1247
+Ridge Regression,51.1,± 12.61,36.95,± 4.74,-0.0385,± 0.4177
