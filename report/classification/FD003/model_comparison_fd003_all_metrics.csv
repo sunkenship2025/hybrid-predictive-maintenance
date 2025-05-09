@@ -1,0 +1,5 @@
+Model,F1_Stage_0,F1_Stage_1,F1_Stage_2,F1_Stage_3,F1_Stage_4,Macro Precision,Macro Recall,Macro F1,Test Accuracy,CV Mean F1 Score
+Random Forest,0.97,0.97,0.94,0.98,0.96,0.96,0.96,0.96,0.96,0.9604
+SVM,0.99,0.99,0.98,0.99,0.98,0.99,0.99,0.99,0.99,0.9814
+Logistic Regression,0.99,0.98,0.97,0.99,0.98,0.98,0.98,0.98,0.98,0.9736
+XGBoost,0.97,0.97,0.97,0.99,0.98,0.98,0.97,0.98,0.98,0.9747
